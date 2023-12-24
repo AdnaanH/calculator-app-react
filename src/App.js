@@ -135,7 +135,7 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
 function formatOperand(operand) {
   switch (operand) {
     case null:
-      return;
+      return "";
     default:
       const [integer, decimal] = operand.split(".");
       if (decimal == null) return INTEGER_FORMATTER.format(integer);
