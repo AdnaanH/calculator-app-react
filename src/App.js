@@ -105,7 +105,11 @@ function reducer(state, { type, payload }) {
 function evaluate({ currentOperand, previousOperand, operation }) {
   const prev = parseFloat(previousOperand)
   const current = parseFloat(currentOperand)
-  if (isNaN(prev) || isNaN(current)) return ""
+
+  if (isNaN(prev) || isNaN(current) || currentOperand === undefined || previousOperand === undefined) {
+    return ""; // Handle the case where operands are undefined or NaN
+  }
+
   let computation = ""
   switch (operation) {
     case "+":
@@ -123,10 +127,10 @@ function evaluate({ currentOperand, previousOperand, operation }) {
     default:
       computation = ""
   }
-  
 
   return computation.toString()
 }
+
 
 const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
   maximumFractionDigits: 0,
@@ -135,6 +139,7 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
 function formatOperand(operand) {
   switch (operand) {
     case null:
+    case undefined:  // Handle undefined case
       return "";
     default:
       const [integer, decimal] = operand.split(".");
@@ -142,6 +147,7 @@ function formatOperand(operand) {
       return `${INTEGER_FORMATTER.format(integer)}.${decimal}`;
   }
 }
+
 
 
 function App() {
