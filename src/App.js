@@ -155,7 +155,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#3a4764] w-full flex flex-col justify-center items-center">
-      <div className="w-4/12 flex-col">
+      <div className="w-10/12 sm:w-4/12 flex-col">
         <div className="w-full mb-6 justify-between flex items-end">
           <h1 className="text-white font-bold text-xl">calc</h1>
           <div className="flex gap-6 items-end">
@@ -167,9 +167,8 @@ function App() {
           </div>
         </div>
 
-        <div className="flex bg-[#182034] mb-6 p-4 rounded-md flex-col w-full gap-1 justify-end items-end ">
-          <p className="text-3xl text-white font-extrabold">{formatOperand(state.previousOperand)} {state.operation}</p>
-          <p className="text-3xl text-white font-extrabold">{formatOperand(state.currentOperand)}</p>
+        <div className="flex bg-[#182034] mb-6 p-4 rounded-md w-full justify-end items-end ">
+          <p className="text-3xl min-h-10 text-white font-extrabold">{formatOperand(state.previousOperand)} {state.operation} {formatOperand(state.currentOperand)}</p>
         </div>
 
         <div className="bg-[#182034] rounded-md w-full flex-col p-4">
