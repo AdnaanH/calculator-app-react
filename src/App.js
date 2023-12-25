@@ -107,7 +107,7 @@ function evaluate({ currentOperand, previousOperand, operation }) {
   const current = parseFloat(currentOperand)
 
   if (isNaN(prev) || isNaN(current) || currentOperand === undefined || previousOperand === undefined) {
-    return ""; // Handle the case where operands are undefined or NaN
+    return ""; 
   }
 
   let computation = ""
@@ -139,7 +139,7 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
 function formatOperand(operand) {
   switch (operand) {
     case null:
-    case undefined:  // Handle undefined case
+    case undefined:  
       return "";
     default:
       const [integer, decimal] = operand.split(".");
