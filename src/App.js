@@ -155,20 +155,20 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#3a4764] w-full flex flex-col justify-center items-center">
-      <div className="w-10/12 sm:w-4/12 flex-col">
+      <div className="w-10/12 sm:w-6/12 flex-col">
         <div className="w-full mb-6 justify-between flex items-end">
-          <h1 className="text-white font-bold text-xl">calc</h1>
+          <h1 className="text-white font-bold text-2xl">calc</h1>
           <div className="flex gap-6 items-end">
             <h2 className="text-white font-bold text-base">THEME</h2>
             <div className="flex-col">
-              <div className="flex gap-2 justify-between text-sm text-white font-semibold px-2 "><span>1</span><span>2</span><span>3</span></div>
-              <div className="flex justify-between bg-[#182034] rounded-full py-1 px-2 gap-2"><span className="bg-[#d03f2f] rounded-full w-4 h-4 text-[#d03f2f] text-xs">•</span><span className="text-[#182034] bg-[#182034] text-xs">•</span><span className="text-[#182034] bg-[#182034] text-xs">•</span></div>
+              <div className="flex gap-2 justify-between text-base text-white font-semibold px-2 "><span>1</span><span>2</span><span>3</span></div>
+              <div className="flex justify-between bg-[#182034] rounded-full py-1 px-2 gap-2"><span className="bg-[#d03f2f] rounded-full w-4 h-4 text-[#d03f2f] text-xs"></span><span className="text-[#182034] bg-[#182034] text-xs">•</span><span className="text-[#182034] bg-[#182034] text-xs">•</span></div>
             </div>
           </div>
         </div>
 
-        <div className="flex bg-[#182034] mb-6 p-4 rounded-md w-full justify-end items-end ">
-          <p className="text-3xl min-h-10 text-white font-extrabold">{formatOperand(state.previousOperand)} {state.operation} {formatOperand(state.currentOperand)}</p>
+        <div className="flex bg-[#182034] mb-6 p-4 rounded-md w-full justify-end items-center ">
+          <p className="text-3xl min-h-20 text-white font-extrabold">{formatOperand(state.previousOperand)} {state.operation} {formatOperand(state.currentOperand)}</p>
         </div>
 
         <div className="bg-[#182034] rounded-md w-full flex-col p-4">
